@@ -73,7 +73,7 @@ public class BiomeGenChocolateBase extends BiomeGenBase {
 		this.worldGeneratorDarkChocolateTrees = new WorldGenDarkChocolateTree(false);
 		this.worldGeneratorLightChocolateTrees = new WorldGenLightChocolateTree(false, false);
 		this.worldGeneratorWhiteChocolateTrees = new WorldGenWhiteChocolateTree(false);
-		this.worldGeneratorBigChocolateTree = new WorldGenMegaCocoa(true, 10, 20, 0, 0);
+		this.worldGeneratorBigChocolateTree = new WorldGenMegaCocoa(false, 10, 20, 0, 0);
 		this.worldGeneratorChocolateSwamp = new WorldGenChocolateSwamp();
 		this.theBiomeDecorator = new BiomeDecoratorChocolate(this);
 		this.topBlock = BlockRegistry.chocoGrass;
