@@ -6,30 +6,27 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerBiomesChocolate extends GenLayer {
 
-protected BiomeGenBase[] allowedBiomes = {BiomeGenChocolateBase.chocolateForest, BiomeGenChocolateBase.chocolateMountians, BiomeGenChocolateBase.chocolatePlains, BiomeGenChocolateBase.chocolateMushroom, BiomeGenChocolateBase.chocolateJungle, BiomeGenChocolateBase.chocolateSwamp, BiomeGenChocolateBase.chocolateRiver, BiomeGenChocolateBase.chocolateOcean, BiomeGenChocolateBase.chocolateDesert};
+	protected BiomeGenBase[] allowedBiomes = {BiomeGenChocolateBase.chocolateForest, BiomeGenChocolateBase.chocolateMountians, BiomeGenChocolateBase.chocolatePlains, BiomeGenChocolateBase.chocolateMushroom, BiomeGenChocolateBase.chocolateJungle, BiomeGenChocolateBase.chocolateSwamp, BiomeGenChocolateBase.chocolateRiver, BiomeGenChocolateBase.chocolateOcean, BiomeGenChocolateBase.chocolateDesert};
 
-public GenLayerBiomesChocolate(long seed, GenLayer genlayer) {
-super(seed);
-this.parent = genlayer;
-}
+	public GenLayerBiomesChocolate(long seed, GenLayer genlayer) {
+		super(seed);
+		this.parent = genlayer;
+	}
 
-public GenLayerBiomesChocolate(long seed) {
-super(seed);
-}
+	public GenLayerBiomesChocolate(long seed) {
+		super(seed);
+	}
 
-@Override
-public int[] getInts(int x, int z, int width, int depth)
-{
-int[] dest = IntCache.getIntCache(width*depth);
+	@Override
+	public int[] getInts(int x, int z, int width, int depth) {
+		int[] dest = IntCache.getIntCache(width * depth);
 
-for (int dz=0; dz<depth; dz++)
-{
-for (int dx=0; dx<width; dx++)
-{
-this.initChunkSeed(dx+x, dz+z);
-dest[(dx+dz*width)] = this.allowedBiomes[nextInt(this.allowedBiomes.length)].biomeID;
-}
-}
-return dest;
-}
+		for (int dz = 0; dz < depth; dz++) {
+			for (int dx = 0; dx < width; dx++) {
+				this.initChunkSeed(dx + x, dz + z);
+				dest[(dx + dz * width)] = this.allowedBiomes[nextInt(this.allowedBiomes.length)].biomeID;
+			}
+		}
+		return dest;
+	}
 }

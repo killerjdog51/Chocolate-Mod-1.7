@@ -1,14 +1,12 @@
 package com.chocolatemod.block;
 
 import com.chocolatemod.main.MainRegistry;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
-import net.minecraft.block.material.Material;
 
-public class lightChocolateBrickStairs extends BlockStairs{
+public class lightChocolateBrickStairs extends BlockStairs {
 
-	protected lightChocolateBrickStairs( Block par2Block, int par3) {
+	protected lightChocolateBrickStairs(Block par2Block, int par3) {
 		super(BlockRegistry.chocolatebrick, 2);
 		// TODO Auto-generated constructor stub
 		this.setCreativeTab(MainRegistry.tabChocolateBlocks);

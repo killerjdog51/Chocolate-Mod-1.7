@@ -2,84 +2,73 @@ package com.chocolatemod.plants;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-public class BlockHugeChocolateMushroom extends Block
-{
-    private static final String[] field_149793_a = new String[] {"skin_white", "skin_brown"};
-    private final int field_149792_b;
-    @SideOnly(Side.CLIENT)
-    private IIcon[] field_149794_M;
-    @SideOnly(Side.CLIENT)
-    private IIcon field_149795_N;
-    @SideOnly(Side.CLIENT)
-    private IIcon field_149796_O;
-    private static final String __OBFID = "CL_00000258";
+import java.util.Random;
 
-    public BlockHugeChocolateMushroom(Material p_i45412_1_, int p_i45412_2_)
-    {
-        super(p_i45412_1_);
-        this.field_149792_b = p_i45412_2_;
-    }
+public class BlockHugeChocolateMushroom extends Block {
+	private static final String[] field_149793_a = new String[]{"skin_white", "skin_brown"};
+	private final int field_149792_b;
+	@SideOnly(Side.CLIENT)
+	private IIcon[] field_149794_M;
+	@SideOnly(Side.CLIENT)
+	private IIcon field_149795_N;
+	@SideOnly(Side.CLIENT)
+	private IIcon field_149796_O;
+	private static final String __OBFID = "CL_00000258";
 
-    /**
-     * Gets the block's texture. Args: side, meta
-     */
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p_149691_1_, int p_149691_2_)
-    {
-        return p_149691_2_ == 10 && p_149691_1_ > 1 ? this.field_149795_N : (p_149691_2_ >= 1 && p_149691_2_ <= 9 && p_149691_1_ == 1 ? this.field_149794_M[this.field_149792_b] : (p_149691_2_ >= 1 && p_149691_2_ <= 3 && p_149691_1_ == 2 ? this.field_149794_M[this.field_149792_b] : (p_149691_2_ >= 7 && p_149691_2_ <= 9 && p_149691_1_ == 3 ? this.field_149794_M[this.field_149792_b] : ((p_149691_2_ == 1 || p_149691_2_ == 4 || p_149691_2_ == 7) && p_149691_1_ == 4 ? this.field_149794_M[this.field_149792_b] : ((p_149691_2_ == 3 || p_149691_2_ == 6 || p_149691_2_ == 9) && p_149691_1_ == 5 ? this.field_149794_M[this.field_149792_b] : (p_149691_2_ == 14 ? this.field_149794_M[this.field_149792_b] : (p_149691_2_ == 15 ? this.field_149795_N : this.field_149796_O)))))));
-    }
+	public BlockHugeChocolateMushroom(Material p_i45412_1_, int p_i45412_2_) {
+		super(p_i45412_1_);
+		this.field_149792_b = p_i45412_2_;
+	}
 
-    /**
-     * Returns the quantity of items to drop on block destruction.
-     */
-    public int quantityDropped(Random p_149745_1_)
-    {
-        int i = p_149745_1_.nextInt(10) - 7;
+	/**
+	 * Gets the block's texture. Args: side, meta
+	 */
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int p_149691_1_, int p_149691_2_) {
+		return p_149691_2_ == 10 && p_149691_1_ > 1 ? this.field_149795_N : (p_149691_2_ >= 1 && p_149691_2_ <= 9 && p_149691_1_ == 1 ? this.field_149794_M[this.field_149792_b] : (p_149691_2_ >= 1 && p_149691_2_ <= 3 && p_149691_1_ == 2 ? this.field_149794_M[this.field_149792_b] : (p_149691_2_ >= 7 && p_149691_2_ <= 9 && p_149691_1_ == 3 ? this.field_149794_M[this.field_149792_b] : ((p_149691_2_ == 1 || p_149691_2_ == 4 || p_149691_2_ == 7) && p_149691_1_ == 4 ? this.field_149794_M[this.field_149792_b] : ((p_149691_2_ == 3 || p_149691_2_ == 6 || p_149691_2_ == 9) && p_149691_1_ == 5 ? this.field_149794_M[this.field_149792_b] : (p_149691_2_ == 14 ? this.field_149794_M[this.field_149792_b] : (p_149691_2_ == 15 ? this.field_149795_N : this.field_149796_O)))))));
+	}
 
-        if (i < 0)
-        {
-            i = 0;
-        }
+	/**
+	 * Returns the quantity of items to drop on block destruction.
+	 */
+	public int quantityDropped(Random p_149745_1_) {
+		int i = p_149745_1_.nextInt(10) - 7;
 
-        return i;
-    }
+		if (i < 0) {
+			i = 0;
+		}
 
-    public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
-    {
-        return Item.getItemById(Block.getIdFromBlock(PlantRegistry.chocolatemushroomwhite) + this.field_149792_b);
-    }
+		return i;
+	}
 
-    /**
-     * Gets an item for the block being called on. Args: world, x, y, z
-     */
-    @SideOnly(Side.CLIENT)
-    public Item getItem(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
-    {
-        return Item.getItemById(Block.getIdFromBlock(PlantRegistry.chocolatemushroomwhite) + this.field_149792_b);
-    }
+	public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
+		return Item.getItemById(Block.getIdFromBlock(PlantRegistry.chocolatemushroomwhite) + this.field_149792_b);
+	}
 
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister p_149651_1_)
-    {
-        this.field_149794_M = new IIcon[field_149793_a.length];
+	/**
+	 * Gets an item for the block being called on. Args: world, x, y, z
+	 */
+	@SideOnly(Side.CLIENT)
+	public Item getItem(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_) {
+		return Item.getItemById(Block.getIdFromBlock(PlantRegistry.chocolatemushroomwhite) + this.field_149792_b);
+	}
 
-        for (int i = 0; i < this.field_149794_M.length; ++i)
-        {
-            this.field_149794_M[i] = p_149651_1_.registerIcon(this.getTextureName() + "_" + field_149793_a[i]);
-        }
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister p_149651_1_) {
+		this.field_149794_M = new IIcon[field_149793_a.length];
 
-        this.field_149796_O = p_149651_1_.registerIcon(this.getTextureName() + "_" + "inside");
-        this.field_149795_N = p_149651_1_.registerIcon(this.getTextureName() + "_" + "skin_stem");
-    }
+		for (int i = 0; i < this.field_149794_M.length; ++i) {
+			this.field_149794_M[i] = p_149651_1_.registerIcon(this.getTextureName() + "_" + field_149793_a[i]);
+		}
+
+		this.field_149796_O = p_149651_1_.registerIcon(this.getTextureName() + "_" + "inside");
+		this.field_149795_N = p_149651_1_.registerIcon(this.getTextureName() + "_" + "skin_stem");
+	}
 }
