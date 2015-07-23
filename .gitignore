@@ -1,57 +1,42 @@
-.gradle
+## Based on GitHub's Eclipse .gitignore
+
+bin/
+.gradle/
 build/
+gradle-app.setting
+
+## IntelliJ IDEA
+
 .idea/
-eclipse/
 *.iml
 *.iws
 *.ipr
 
-# Ignore Gradle GUI config
-gradle-app.setting
+## Eclipse
 
-# =========================
-# Operating System Files
-# =========================
+eclipse/
+*.pydevproject
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
 
-# OSX
-# =========================
+# External tool builders
+.externalToolBuilders/
 
-.DS_Store
-.AppleDouble
-.LSOverride
+# Locally stored "Eclipse launch configurations"
+*.launch
 
-# Thumbnails
-._*
+# CDT-specific
+.cproject
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-# Windows
-# =========================
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
+# PDT-specific
+.buildpath

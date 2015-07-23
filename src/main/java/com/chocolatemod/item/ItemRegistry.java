@@ -1,23 +1,17 @@
 package com.chocolatemod.item;
 
-import com.chocolatemod.block.BlockRegistry;
 import com.chocolatemod.main.MainRegistry;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.material.Material;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemDoor;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidContainerRegistry;
 
 public class ItemRegistry {
-	
-	public static void mainRegistry(){
+
+	public static void mainRegistry() {
 		initialiseItem();
 		registerItem();
 	}
-	
+
 	public static Item chocolatemilk;
 	public static Item whitechocolatemilk;
 	public static Item darkchocolatemilk;
@@ -38,18 +32,18 @@ public class ItemRegistry {
 	public static Item rawMintTea;
 	public static Item mintSeeds;
 	public static Item CocoaDoorItem;
-	public static Item ChocolateFeather; 
+	public static Item ChocolateFeather;
 	public static Item WarmChocolateBowl;
-	
+
 	//Cake
 	public static Item ChocolateCake1;
 	public static Item DarkChocolateCake1;
 	public static Item LightChocolateCake1;
 	public static Item WhiteChocolateCake1;
 
-	
-	public static void initialiseItem(){
-		
+
+	public static void initialiseItem() {
+
 		bowlchocolatemilk = new BowlChocolateMilk(2, 0.4F, false).setUnlocalizedName("bowlchocolatemilk").setTextureName("killerjdog51:chocolatemilkbowl").setCreativeTab(MainRegistry.tabChocolateMisc);
 		bowlwhitechocolatemilk = new BowlWhiteChocolateMilk(2, 0.4F, false).setUnlocalizedName("bowlwhitechocolatemilk").setCreativeTab(MainRegistry.tabChocolateMisc);
 		bowldarkchocolatemilk = new BowlDarkChocolateMilk(2, 0.4F, false).setUnlocalizedName("bowldarkchocolatemilk").setCreativeTab(MainRegistry.tabChocolateMisc).setTextureName("killerjdog51:darkchocolatemilkbowl");
@@ -67,9 +61,9 @@ public class ItemRegistry {
 		WarmChocolateBowl = new WarmBowlChocolateMilk(3, 0.5F, false).setUnlocalizedName("warmchocolatebowl").setContainerItem(net.minecraft.init.Items.bowl);
 
 	}
-	
-	public static void registerItem(){
-		
+
+	public static void registerItem() {
+
 		GameRegistry.registerItem(ItemRegistry.bowlchocolatemilk, bowlchocolatemilk.getUnlocalizedName());
 		GameRegistry.registerItem(ItemRegistry.bowlwhitechocolatemilk, bowlwhitechocolatemilk.getUnlocalizedName());
 		GameRegistry.registerItem(ItemRegistry.bowldarkchocolatemilk, bowldarkchocolatemilk.getUnlocalizedName());
